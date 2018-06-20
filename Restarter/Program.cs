@@ -14,7 +14,11 @@ namespace Restarter
             {
                 try
                 {
-                    Process p = Process.Start(path);
+                    FileInfo fi = new FileInfo(path);
+                    ProcessStartInfo startInfo = new ProcessStartInfo(path) {
+                        WorkingDirectory = fi.Directory.ToString()
+                    };
+                    Process p = Process.Start(startInfo);
                     p.WaitForExit();
                 }
                 catch (Win32Exception we)
@@ -23,6 +27,8 @@ namespace Restarter
                     Console.WriteLine("We weren't able to access to " + path + Environment.NewLine + "Reason: " + we.Message + Environment.NewLine);
                     break;
                 }
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Restarting " + path);
             }
         }
 
