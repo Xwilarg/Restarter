@@ -14,7 +14,8 @@ namespace Restarter
             {
                 try
                 {
-                    Process.Start(path);
+                    Process p = Process.Start(path);
+                    p.WaitForExit();
                 }
                 catch (Win32Exception we)
                 {
