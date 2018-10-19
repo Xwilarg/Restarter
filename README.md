@@ -1,4 +1,7 @@
 # Restarter
+
+[![GuardRails badge](https://badges.production.guardrails.io/Xwilarg/Restarter.svg)](https://www.guardrails.io)
+
 A program that start others programs and restart them if they shut down.
 
 # How to use it ?
