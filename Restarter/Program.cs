@@ -28,7 +28,7 @@ namespace Restarter
                     break;
                 }
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("Restarting " + path);
+                Console.WriteLine(DateTime.Now.ToString() + ": Restarting " + path);
             }
         }
 
